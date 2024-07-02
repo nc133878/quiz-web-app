@@ -1,5 +1,6 @@
 import React from 'react'
 import { nanoid } from 'nanoid'
+import { useCallback } from 'react'
 import Question from './Questions'
 
 
@@ -18,9 +19,23 @@ function QuestionPage(props) {
   })
 
 
+  const checkAllAnswered = useCallback( () => {
+    let allAnswered = true
+
+    Object.values(selectedAnswer).forEach( answer => {
+      if(!answer){
+        allAnswered = false
+      }
+    })
+
+    setAllAnswered(allAnswered)
+  }, [selectedAnswer])
+
   React.useEffect(() => {
     checkAllAnswered()
-  }, [selectedAnswer])
+  }, [selectedAnswer, checkAllAnswered])
+
+
 
     
   // array to hold correct answers
@@ -59,17 +74,7 @@ function QuestionPage(props) {
       })
     }
 
-    function checkAllAnswered(){
-        let allAnswered = true
-
-        Object.values(selectedAnswer).forEach( answer => {
-          if(!answer){
-            allAnswered = false
-          }
-        })
-
-        setAllAnswered(allAnswered)
-    }
+    
 
     function checkAnswers(){
       if(allAnswered){
