@@ -20,7 +20,6 @@ function QuestionPage(props) {
 
   React.useEffect(() => {
     checkAllAnswered()
-    console.log(selectedAnswer)
   }, [selectedAnswer])
 
     

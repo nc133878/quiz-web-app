@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import QuestionPage from './components/QuestionPage.js';
 import StartPage from './components/StartPage';
 import Blob from './components/Blob'
 import Answers from './components/Answers.js';
