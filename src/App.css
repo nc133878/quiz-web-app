@@ -1,38 +1,177 @@
-.App {
+*{
+  box-sizing: border-box;
+}
+
+button:disabled {
+  background-color: dimgrey;
+  color: linen;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+html, body, .App{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+   font-family: 'Karla', sans-serif;
+   background-color: #F5F7FB;
+   overflow: hidden;
+}
+
+span{
+  margin-right: 1em;
+}
+
+.App{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.blob{
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 100%;
+  z-index: -1;
+  bottom: -100px;
+  opacity: 0.5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top{
+  background-color: cadetblue;
+  top: -200px;
+  right: -200px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.bottom{
+  background-color: rgb(225, 198, 130);
+  bottom: -200px;
+  left: -200px;
+}
+
+.start-page-container h1{
+  font-size: 3rem;
+  margin: 0;
+}
+
+.start-page-container p{
+  margin: 1.5em 0 3em 0;
+}
+
+.question-container{
+  text-align: left;
+  color: #293264;
+  max-width: 800px;
+}
+
+.answer-container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.radio-buttons{
+  position: relative;
+}
+/* Hide the default radio buttons */
+.radio-buttons input[type="radio"] {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style the labels to look like buttons */
+.radio-buttons label {
+  display: inline-block;
+  border: 1px solid #293264;
+  border-radius: 10px;
+  padding: 1em 2em;
+  margin-top: 0;
+  margin-right: 1em;
+  cursor: pointer;
+  background: none;
+  color: #293264;
+}
+
+/* Change background color when the label is hovered */
+.radio-buttons label:hover {
+  opacity: 0.7;
+}
+
+/* Change background color when the radio input is checked */
+.radio-buttons input[type="radio"]:checked + label {
+  background: #D6DBF5;
+  
+}
+
+/*
+.answer{
+  border: 1px solid #293264;
+  border-radius: 10px;
+  padding: 1em 2em;
+  margin-top: 0;
+  margin-right: 1em;
+  cursor: pointer;
+  position: relative;
+  background: none;
+  color: #293264;
+}
+
+
+
+.answer:hover{
+  opacity: 0.7;
+}
+
+
+
+.answer input[type="radio"] {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+.answer input[type="radio"]:checked + label{
+  background: #D6DBF5;
+
+}
+*/
+
+button{
+  max-width: 200px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  padding: 1em 2em;
+  text-align: center;
+  border: none;
+  border-radius: 15px;
+  background: #4D5B9E;
+  color: #F5F7FB;
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.center{
+  text-align: center;
 }
