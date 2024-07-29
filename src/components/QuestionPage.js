@@ -104,7 +104,20 @@ function QuestionPage(props) {
         <div key={nanoid()} className='question-container'>
             {questionElements}
             <div className='center'>
-              {isSubmitted && <span>{`You have scored ${correctSelections.length}/${correctAnswers.length} correct answers.`}</span>}
+              {
+                isSubmitted && 
+                <>
+                  <span>
+                    {`You have scored ${correctSelections.length}/${correctAnswers.length} correct answers.`}
+                  </span>
+                  <br />
+                  
+                  {correctAnswers.map( (answer, index) => {
+                    return <p>{`${index+1}: ${props.decode(answer)}`}</p>
+                  })}
+                  
+                </>
+              }
               <button onClick={!isSubmitted? checkAnswers : props.startQuiz} disabled={!allAnswered}>{!isSubmitted ? "Check Answers": "Play Again"}</button>
             </div>
         </div>

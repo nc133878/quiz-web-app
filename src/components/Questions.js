@@ -3,22 +3,24 @@ import { nanoid } from 'nanoid'
 
 function Question(props) {
 
-  const labelArray = props.allAnswers[props.index].map((answer) => {
+  const labelArray = props.allAnswers[props.index].map((answer ,index) => {
     let styles = {backgroundColor: 'none'}
     if (props.isSubmitted) {
-      if (props.correctAnswers.includes(answer)) {
+      console.log("Q"+ index + ": " + props.selectedAnswer[props.questionID])
+      console.log("C"+ index + ": " + props.correctAnswers[index])
+      if (props.correctSelections.includes(answer) && props.selectedAnswer[props.questionID] === answer) {
         styles = {
           backgroundColor: '#94D7A2',
           border: 'none'
         }
-      } else if (props.incorrectSelections.includes(answer) && props.selectedAnswer[props.questionID] === answer) {
+      }else if (props.incorrectSelections.includes(answer) && props.selectedAnswer[props.questionID] === answer) {
         styles = { 
           backgroundColor: '#F8BCBC', 
           opacity: 0.5,
           border: 'none'
         }
       }
-    }
+      }
     return(
       <div key={nanoid()} className='radio-buttons' >
         <input 
