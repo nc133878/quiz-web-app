@@ -88,21 +88,20 @@ span {
 }
 
 .question-block {
-  margin-bottom: 20px;
+  margin-bottom: 14px;   /* was 20px */
 }
 
 .question-block h3 {
-  margin-bottom: 12px;
+  font-size: 1rem;        /* was default ~1.17em */
+  line-height: 1.3;
+  margin-bottom: 8px;    /* was 12px */
 }
 
 /* ====================
    ANSWERS
    ==================== */
-
 .answer-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;              /* was 10px */
 }
 
 .radio-buttons {
@@ -120,15 +119,9 @@ span {
 }
 
 .radio-buttons label {
-  display: block;
-  width: 100%;
-  border: 1px solid #293264;
-  border-radius: 12px;
-  padding: 12px 14px;
-  cursor: pointer;
-  background: none;
-  color: #293264;
-  line-height: 1.2;
+  padding: 8px 12px;     /* was 12px 14px */
+  font-size: 0.9rem;
+  border-radius: 10px;
 }
 
 .radio-buttons label:hover {
