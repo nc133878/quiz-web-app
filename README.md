@@ -28,8 +28,8 @@ A responsive quiz application built with **React** that fetches trivia questions
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js (LTS recommended)
-- npm or yarn
+- Node.js 
+- npm 
 
 ### Installation
 ```bash
